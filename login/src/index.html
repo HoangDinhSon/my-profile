@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>login</title>
+  <!-- font google  -->
+  <link href="./output.css" rel="stylesheet">
+  <!-- my css -->
+  <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+  <div class="container">
+    <div>MAJESTIC LOGIN FORM</div>
+    <form id="formLogin">
+      <div>Log in</div>
+
+      <div class="flex flex-col">
+        <label for="account">your email or name</label>
+        <input type="text" placeholder="EMAIL OR USERNAME" id="account" />
+        <p id="accountNotice" class="hidden">không được để trống</p>
+      </div>
+
+      <div>
+        <label for="password"> Your Password</label>
+        <input type="password" placeholder="eg.X8Deo" id="password" />
+        <p class="hidden" id="passwordNotice">aaa</p>
+      </div>
+
+      <div>
+        <input type="checkbox" id="remember" />
+        <label for="remember">Remember me? </label>
+      </div>
+
+      <div>
+        <button type="submit" id="btnLogin">Login</button>
+      </div>
+
+      <div>
+        <a href=""> Not a member yet?</a>
+        <button>Register Now</button>
+      </div>
+
+    </form>
+  </div>
+  <script src="script.js"></script>
+</body>
+
+</html>
