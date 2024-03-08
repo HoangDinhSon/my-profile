@@ -1,3 +1,5 @@
+## How to run project
+
 ## Technical 
 javascript 
 tailwindcss
@@ -19,3 +21,6 @@ password
 nếu có 6 kí tự thông báo trung binh
 nếu có 7 kí tự khá 
 nếu có 8 kí tự mạnh
+### css 
+- css follow UI
+- responsive for các loại màn hình

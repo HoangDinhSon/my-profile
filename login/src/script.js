@@ -4,9 +4,6 @@ const formLogin = document.getElementById("formLogin");
 const passwordEle = document.getElementById("password");
 const accountNotice = document.getElementById("accountNotice");
 const passwordNotice = document.getElementById("passwordNotice");
-/** 
- *@param string
-*/
 
 function handleLogin(event) {
     event.preventDefault()
@@ -19,11 +16,14 @@ function handleLogin(event) {
     const hasDigit = /[0-9]/.test(passwordInputValue);
     const hasAtLeaseUppercase = /[A-Z]/.test(passwordInputValue);
     const hasAtLeaseSpecialCharacter = /[^0-9A-Za-z]/.test(passwordInputValue);
+    const togglePassword = document.querySelector("#togglePassword");
+    const password = document.querySelector("#password");
 
     // validate input account
     if (accountInput.trim() == "") {
         accountNotice.className = "block text-[red]";
-
+    } else {
+        accountNotice.className = "hidden";
     }
     /*
     validate password and độ mạnh của password
@@ -35,33 +35,33 @@ function handleLogin(event) {
         passwordNotice.textContent = passwordErrorNotice;
     }
     if (passwordInputValue == "") {
-        noticeErrorPassword("Phải điền vào password");
+        noticeErrorPassword("Phải điền vào password, ");
         return
     }
 
     if (!hasSpace) {
-        noticeErrorPassword("Không được chứa khoảng trắng,");
+        noticeErrorPassword("Không được chứa khoảng trắng, ");
     }
-    console.log("hasAtLeaseUppercase", hasAtLeaseUppercase);
+
     if (hasAtLeaseUppercase === false) {
-        noticeErrorPassword(" Bạn phải nhập ít nhất 1 chữ Hoa");
+        noticeErrorPassword("Bạn phải nhập ít nhất 1 chữ Hoa, ");
     }
 
     // password phải lớn hơn hoặc bằng 6 kí tự 
     if (passwordInputValue.length < 6) {
-        noticeErrorPassword("password phải có hơn 6 kí tự");
+        noticeErrorPassword("Password phải có hơn 6 kí tự, ");
     }
     // check has at least 1 number
     if (hasDigit === false) {
-        noticeErrorPassword("có ít nhất 1 số");
+        noticeErrorPassword("Phải có ít nhất 1 số, ");
     }
 
     // check has at lease xharacter Special
     if (hasAtLeaseSpecialCharacter === false) {
-        noticeErrorPassword("có ít nhất 1 kí tự đặc biệt");
+        noticeErrorPassword("Phải có ít nhất 1 kí tự đặc biệt, ");
     }
     // if there is not error will run axios 
-    if (passwordErrorNotice === "") {
+    if (passwordErrorNotice === "" && accountInput.trim().length > 0) {
         try {
             loginDummyData()
         } catch (error) {
@@ -70,5 +70,6 @@ function handleLogin(event) {
 
     }
 };
+
 
 formLogin.addEventListener('submit', handleLogin);
