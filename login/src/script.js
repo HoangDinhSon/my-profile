@@ -1,28 +1,24 @@
-// khi nhan login phai validate 
-/*
-- email khong dc de trong, phai co thong6 bao2
-- pass word phai co so va chu cai 
 
-lay du lieu 
-validate 
-neu  thanh cong thi gui len server 
-neu khong thanh cong thi hien thong bao 
-*/
 const accountEle = document.getElementById("account");
-const btnLogin = document.getElementById("btnLogin");
 const formLogin = document.getElementById("formLogin");
 const passwordEle = document.getElementById("password");
 const accountNotice = document.getElementById("accountNotice");
 const passwordNotice = document.getElementById("passwordNotice");
+/** 
+ *@param string
+*/
+
 function handleLogin(event) {
     event.preventDefault()
     const accountInput = accountEle.value;
 
-    const passwordErrorNotice = "";
+    let passwordErrorNotice = "";
+    passwordNotice.textContent = "";
     const passwordInputValue = passwordEle.value;
     const hasSpace = passwordInputValue.search(/\s/) == -1;// khoang trắng 
-    console.log(hasSpace);
-    const hasAtLeaseUppercase = passwordInputValue.search(/[A-Z]/) == -1;
+    const hasDigit = /[0-9]/.test(passwordInputValue);
+    const hasAtLeaseUppercase = /[A-Z]/.test(passwordInputValue);
+    const hasAtLeaseSpecialCharacter = /[^0-9A-Za-z]/.test(passwordInputValue);
 
     // validate input account
     if (accountInput.trim() == "") {
@@ -33,25 +29,46 @@ function handleLogin(event) {
     validate password and độ mạnh của password
     1.  check khoang trắng use regex 
     */
-    if (passwordInputValue == "") {
+    function noticeErrorPassword(error) {
         passwordNotice.className = "block text-[red]";
-        passwordNotice.textContent = passwordErrorNotice + "phải điền vào password - ";
+        passwordErrorNotice += error;
+        passwordNotice.textContent = passwordErrorNotice;
+    }
+    if (passwordInputValue == "") {
+        noticeErrorPassword("Phải điền vào password");
+        return
     }
 
     if (!hasSpace) {
-        passwordNotice.className = "block text-[red]";
-        passwordNotice.textContent = passwordErrorNotice + "không được chứa khoảng trắng - ";
+        noticeErrorPassword("Không được chứa khoảng trắng,");
     }
-    if (hasAtLeaseUppercase) {
-        passwordNotice.className = "block text-[red]";
-        passwordNotice.textContent = passwordErrorNotice + "Bạn phải nhập ít nhất 1 chữ Hoa - ";
+    console.log("hasAtLeaseUppercase", hasAtLeaseUppercase);
+    if (hasAtLeaseUppercase === false) {
+        noticeErrorPassword(" Bạn phải nhập ít nhất 1 chữ Hoa");
     }
-    console.log(passwordErrorNotice);
 
+    // password phải lớn hơn hoặc bằng 6 kí tự 
+    if (passwordInputValue.length < 6) {
+        noticeErrorPassword("password phải có hơn 6 kí tự");
+    }
+    // check has at least 1 number
+    if (hasDigit === false) {
+        noticeErrorPassword("có ít nhất 1 số");
+    }
 
+    // check has at lease xharacter Special
+    if (hasAtLeaseSpecialCharacter === false) {
+        noticeErrorPassword("có ít nhất 1 kí tự đặc biệt");
+    }
+    // if there is not error will run axios 
+    if (passwordErrorNotice === "") {
+        try {
+            loginDummyData()
+        } catch (error) {
+            console.log(error);
+        }
 
-    // console.log(result);
-    console.log(passwordEle.value);
+    }
 };
 
 formLogin.addEventListener('submit', handleLogin);
