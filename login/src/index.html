@@ -16,6 +16,7 @@
   <!-- my css -->
   <link rel="stylesheet" href="style.css">
   <!-- script -->
+  <script src="https://accounts.google.com/gsi/client" async></script>
   <script>
     // On page load or when changing themes, best to add inline in `head` to avoid FOUC
     if (localStorage.getItem('color-theme') === 'dark' || (!('color-theme' in localStorage) && window.matchMedia('(prefers-color-scheme: dark)').matches)) {
@@ -28,6 +29,7 @@
 </head>
 
 <body class="font-['Be_Vietnam_Pro'] ">
+
   <!-- header -->
   <header class="flex justify-between p-2">
     <div>Logo</div>
@@ -161,6 +163,24 @@
       </div>
     </div>
   </div>
+
+  <script>
+    function handleCredentialResponse(response) {
+      console.log("Encoded JWT ID token: " + response.credential);
+    }
+    window.onload = function () {
+      google.accounts.id.initialize({
+        client_id: "334075336256-vp9uf43j5520gbii45ei7esppb7jjp2r.apps.googleusercontent.com",
+        callback: handleCredentialResponse
+      });
+      google.accounts.id.renderButton(
+        document.getElementById("buttonDiv"),
+        { theme: "outline", size: "large" }  // customization attributes
+      );
+      google.accounts.id.prompt(); // also display the One Tap dialog
+    }
+  </script>
+  <div id="buttonDiv"></div>
   <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
   <script src="api/api-axios.js"></script>
   <script src="helper/toggle-visible-password.js"></script>
