@@ -19,10 +19,10 @@ function changeLanguage() {
     switch (languageChosen.value) {
         case "ENGLISH":
             headerLogin.textContent = ENGLISH.log_in
-            break;
+            return;
         case "VIETNAM":
             headerLogin.textContent = VIETNAM.log_in
-            break;
+            return;
         default:
             console.log("ONLY run when not english and vietnam");
             break;

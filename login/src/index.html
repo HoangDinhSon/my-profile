@@ -28,64 +28,136 @@
 </head>
 
 <body class="font-['Be_Vietnam_Pro'] ">
-  <div class="h-screen flex justify-center items-center text-white bg-gradient-to-r from-cyan-500 to-blue-500">
-    <div class="font-light text-sm w-[450px] bg-[#00000080] p-4 rounded-md">
-      <div>
-        <button id="theme-toggle" type="button"
-          class="text-gray-500 dark:text-gray-400 hover:bg-gray-100 dark:hover:bg-gray-700 focus:outline-none focus:ring-4 focus:ring-gray-200 dark:focus:ring-gray-700 rounded-lg text-sm p-2.5">
-          <svg id="theme-toggle-dark-icon" class="hidden w-5 h-5" fill="currentColor" viewBox="0 0 20 20"
-            xmlns="http://www.w3.org/2000/svg">
-            <path d="M17.293 13.293A8 8 0 016.707 2.707a8.001 8.001 0 1010.586 10.586z"></path>
-          </svg>
-          <svg id="theme-toggle-light-icon" class="hidden w-5 h-5" fill="currentColor" viewBox="0 0 20 20"
-            xmlns="http://www.w3.org/2000/svg">
-            <path
-              d="M10 2a1 1 0 011 1v1a1 1 0 11-2 0V3a1 1 0 011-1zm4 8a4 4 0 11-8 0 4 4 0 018 0zm-.464 4.95l.707.707a1 1 0 001.414-1.414l-.707-.707a1 1 0 00-1.414 1.414zm2.12-10.607a1 1 0 010 1.414l-.706.707a1 1 0 11-1.414-1.414l.707-.707a1 1 0 011.414 0zM17 11a1 1 0 100-2h-1a1 1 0 100 2h1zm-7 4a1 1 0 011 1v1a1 1 0 11-2 0v-1a1 1 0 011-1zM5.05 6.464A1 1 0 106.465 5.05l-.708-.707a1 1 0 00-1.414 1.414l.707.707zm1.414 8.486l-.707.707a1 1 0 01-1.414-1.414l.707-.707a1 1 0 011.414 1.414zM4 11a1 1 0 100-2H3a1 1 0 000 2h1z"
-              fill-rule="evenodd" clip-rule="evenodd"></path>
-          </svg>
-        </button>
-        <select name="languages" id="language" class="select-language">
-          <option value="ENGLISH">English</option>
-          <option value="VIETNAM">VietNam</option>
-        </select>
-      </div>
+  <!-- header -->
+  <header class="flex justify-between p-2">
+    <div>Logo</div>
 
-      <form id="formLogin" class=" ">
-        <div class="text-center text-2xl pb-2" id="headerLogin">Log in</div>
+    <div class="flex gap-2">
+      <button id="theme-toggle" type="button"
+        class="text-gray-500 dark:text-gray-400 hover:bg-gray-100 dark:hover:bg-gray-700 focus:outline-none focus:ring-4 focus:ring-gray-200 dark:focus:ring-gray-700 rounded-lg text-sm p-2.5">
+        <svg id="theme-toggle-dark-icon" class="hidden w-5 h-5" fill="currentColor" viewBox="0 0 20 20"
+          xmlns="http://www.w3.org/2000/svg">
+          <path d="M17.293 13.293A8 8 0 016.707 2.707a8.001 8.001 0 1010.586 10.586z"></path>
+        </svg>
+        <svg id="theme-toggle-light-icon" class="hidden w-5 h-5" fill="currentColor" viewBox="0 0 20 20"
+          xmlns="http://www.w3.org/2000/svg">
+          <path
+            d="M10 2a1 1 0 011 1v1a1 1 0 11-2 0V3a1 1 0 011-1zm4 8a4 4 0 11-8 0 4 4 0 018 0zm-.464 4.95l.707.707a1 1 0 001.414-1.414l-.707-.707a1 1 0 00-1.414 1.414zm2.12-10.607a1 1 0 010 1.414l-.706.707a1 1 0 11-1.414-1.414l.707-.707a1 1 0 011.414 0zM17 11a1 1 0 100-2h-1a1 1 0 100 2h1zm-7 4a1 1 0 011 1v1a1 1 0 11-2 0v-1a1 1 0 011-1zM5.05 6.464A1 1 0 106.465 5.05l-.708-.707a1 1 0 00-1.414 1.414l.707.707zm1.414 8.486l-.707.707a1 1 0 01-1.414-1.414l.707-.707a1 1 0 011.414 1.414zM4 11a1 1 0 100-2H3a1 1 0 000 2h1z"
+            fill-rule="evenodd" clip-rule="evenodd"></path>
+        </svg>
+      </button>
+      <select name="languages" id="language" class="select-language">
+        <option value="ENGLISH">English</option>
+        <option value="VIETNAM">VietNam</option>
+      </select>
+    </div>
+
+    <div class="">
+      <button class="btn-header" id="btnSwitchLogin">Login </button>
+      <button class="btn-header btnSwitchRegister" id="btnSwitchRegister"> Register </button>
+    </div>
+
+  </header>
+  <!-- Form Register -->
+  <div id="UIRegisterForm" class="hidden">
+    <div class="register-form">
+      <div class="font-light text-sm w-[450px] bg-[#00000080] p-4 rounded-md">
+        <div class="text-center text-2xl pb-2">Create account</div>
         <hr class="pb-4">
-
-        <div class="flex flex-col pb-2 font-light">
-          <label for="account" class="pb-1">Your email or username</label>
-          <input type="text" placeholder="email or username" id="account" class="input-login" />
-          <p id="accountNotice" class="hidden ">Không được để trống</p>
-        </div>
-
-        <div class="flex flex-col pb-2">
-          <label for="password">Your password</label>
-          <div class="relative">
-            <input type="password" placeholder="eg.X8Deo" id="password" class="input-login" />
-            <i class="bi bi-eye-slash absolute top-[50%] translate-y-[-60%] right-3 text-black cursor-pointer text-2xl "
-              id="togglePassword"></i>
+        <form id="formRegister">
+          <div class="flex flex-col pb-2">
+            <label for="usernameRegister">Username</label>
+            <input id="usernameRegister" type="text" placeholder="E-mail" class="input-login">
+            <div id="usernameRegisterError"></div>
           </div>
-          <p class="hidden text-[10px]" id="passwordNotice">notice password</p>
+
+          <div class="flex flex-col pb-2">
+            <label for="passwordRegister">Password</label>
+            <input id="passwordRegister" type="password" placeholder="Password" class="input-login">
+            <div id="passwordRegisterError"></div>
+          </div>
+
+          <div class="">
+            <label for="passwordRegisterRewrite">Nhập Lại password</label>
+            <input id="passwordRegisterRewrite" type="password" placeholder="Password" class="input-login">
+            <div id="passwordRegisterRewriteError"></div>
+          </div>
+
+          <div class="pb-2">
+            <input id="readPolicyRegister" type="checkbox" >
+            <label for="readPolicyRegister">I have read and agree to the <span>Terms of Use</span> and <span> Privacy Policy</span></label>
+          </div>
+
+          <div class="">
+            <button type="submit" class="btn-second w-full">Create Account</button>
+          </div>
+        </form>
+
+        <div class="pb-3 text-center">
+          <div class="">or sign up with social media</div>
         </div>
 
-        <div class="pb-2 flex items-center ">
-          <input type="checkbox" id="remember"
-            class="mr-2 cursor-pointer w-4 h-4 border border-gray-300 rounded bg-gray-50 focus:ring-3 focus:ring-blue-300 dark:bg-gray-700 dark:border-gray-600 dark:focus:ring-blue-600 dark:ring-offset-gray-800 dark:focus:ring-offset-gray-800" />
-          <label for="remember" class="cursor-pointer">Remember me? </label>
+        <div class="flex justify-between">
+          <button type="button"
+            class="text-white bg-[#3b5998] hover:bg-[#3b5998]/90 focus:ring-4 focus:outline-none focus:ring-[#3b5998]/50 font-medium rounded-lg text-sm px-5 py-2.5 text-center inline-flex items-center dark:focus:ring-[#3b5998]/55 me-2 mb-2">
+            <img src="assets/icons/icon-facebook.svg" alt="" class="w-4 h-4 me-2 ">
+            Facebook
+          </button>
+          <button type="button"
+            class="text-white bg-[#1da1f2] hover:bg-[#1da1f2]/90 focus:ring-4 focus:outline-none focus:ring-[#1da1f2]/50 font-medium rounded-lg text-sm px-5 py-2.5 text-center inline-flex items-center dark:focus:ring-[#1da1f2]/55 me-2 mb-2">
+            <img src="assets/icons/icon-twitter.svg" alt="" srcset="" class="w-4 h-4 me-2">
+            Twitter
+          </button>
+          <button type="button"
+            class="text-white bg-[#4285F4] hover:bg-[#4285F4]/90 focus:ring-4 focus:outline-none focus:ring-[#4285F4]/50 font-medium rounded-lg text-sm px-5 py-2.5 text-center inline-flex items-center dark:focus:ring-[#4285F4]/55 me-2 mb-2">
+            <img src="assets/icons/icon-google.svg" alt="" srcset="" class="w-4 h-4 me-2">
+            Google
+          </button>
         </div>
 
-        <div class="pb-2">
-          <button type="submit" id="btnLogin" class="btn-login w-full">Login</button>
+        <div class="text-center">
+          Already have an account? <button href="" id="changeSignInUI" class="hover:text-[#5656da]">Sign in</button>
         </div>
-        <hr class="pb-2">
+      </div>
+    </div>
+  </div>
 
-      </form>
-      <div class=" flex justify-between items-center">
-        <a href=""> Not a member yet?</a>
-        <button class="btn-login">Register
-          Now</button>
+  <!-- Login Form -->
+  <div id="UILoginForm">
+    <div class="register-form">
+      <div class="font-light text-sm w-[450px] bg-[#00000080] p-4 rounded-md">
+        <form id="formLogin" class=" ">
+          <div class="text-center text-2xl pb-2" id="headerLogin">Log in</div>
+          <hr class="pb-4">
+          <div class="flex flex-col pb-2">
+            <label for="account" class="pb-1">Username</label>
+            <input type="text" placeholder="email or username" id="account" class="input-login" />
+            <p id="accountNotice" class="hidden ">Không được để trống</p>
+          </div>
+          <div class="flex flex-col pb-2">
+            <label for="password">Your password</label>
+            <div class="relative">
+              <input type="password" placeholder="eg.X8Deo" id="password" class="input-login" />
+              <i class="bi bi-eye-slash absolute top-[50%] translate-y-[-60%] right-3 text-black cursor-pointer text-2xl "
+                id="togglePassword"></i>
+            </div>
+            <p class="hidden text-[10px]" id="passwordNotice">notice password</p>
+          </div>
+          <div class="pb-2 flex items-center ">
+            <input type="checkbox" id="remember"
+              class="mr-2 cursor-pointer w-4 h-4 border border-gray-300 rounded bg-gray-50 focus:ring-3 focus:ring-blue-300 dark:bg-gray-700 dark:border-gray-600 dark:focus:ring-blue-600 dark:ring-offset-gray-800 dark:focus:ring-offset-gray-800" />
+            <label for="remember" class="cursor-pointer">Remember me? </label>
+          </div>
+          <div class="pb-2">
+            <button type="submit" id="btnLogin" class="btn-login w-full">Login</button>
+          </div>
+          <hr class="pb-2">
+        </form>
+        <div class=" flex justify-between items-center">
+          <a href=""> Not a member yet?</a>
+          <button class="btn-login btnSwitchRegister">Register
+            Now</button>
+        </div>
       </div>
     </div>
   </div>
@@ -94,6 +166,8 @@
   <script src="helper/toggle-visible-password.js"></script>
   <script src="helper/dark-mode-switcher.js"></script>
   <script src="helper/change-language.js"></script>
+  <script src="helper/switch-login-register.js"></script>
+  <script src="helper/handle-fom-register.js"></script>
   <script src="script.js"></script>
 </body>
 

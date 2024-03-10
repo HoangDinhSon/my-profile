@@ -9,9 +9,9 @@ run tailwindcss open home tailwindcss
 ## feature
 - login have validate
 - css
-- deploy vps 
 - convert language
 - login use google and facebook
+- deploy vps 
 ### validate
 password 
 - tối thiểu 6 ký tự có  chữa cái , 

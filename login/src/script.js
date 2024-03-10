@@ -16,8 +16,6 @@ function handleLogin(event) {
     const hasDigit = /[0-9]/.test(passwordInputValue);
     const hasAtLeaseUppercase = /[A-Z]/.test(passwordInputValue);
     const hasAtLeaseSpecialCharacter = /[^0-9A-Za-z]/.test(passwordInputValue);
-    const togglePassword = document.querySelector("#togglePassword");
-    const password = document.querySelector("#password");
 
     // validate input account
     if (accountInput.trim() == "") {
