@@ -1,7 +1,7 @@
 "use strict"
 
 const mongoose = require("mongoose");
-const connectString = "mongodb+srv://dinhson040494:plGrRVy9airsbZbf@info-user.qwqkhkr.mongodb.net/?retryWrites=true&w=majority&appName=info-user"
+const config = require("../config/config.mongodb")
 const { countConnect } = require("../helpers/check.connect");
 class Database {
 
@@ -15,7 +15,7 @@ class Database {
             mongoose.set("debug", { color: true })
         }
 
-        mongoose.connect(connectString, {
+        mongoose.connect(config.db.link, {
             maxPoolSize: 50
         })
             .then(_ => console.log("Connected mongoDb Successe", countConnect()))
