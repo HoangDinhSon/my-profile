@@ -30,10 +30,9 @@
 
 <body class="font-['Be_Vietnam_Pro'] ">
 
-  <!-- header -->
+  <!-- header 1 -->
   <header class="flex justify-between p-2">
     <div>Logo</div>
-
     <div class="flex gap-2">
       <button id="theme-toggle" type="button"
         class="text-gray-500 dark:text-gray-400 hover:bg-gray-100 dark:hover:bg-gray-700 focus:outline-none focus:ring-4 focus:ring-gray-200 dark:focus:ring-gray-700 rounded-lg text-sm p-2.5">
@@ -163,23 +162,8 @@
       </div>
     </div>
   </div>
+  <a href="../../home-page/home.html" target="_blank">Educative</a>
 
-  <script>
-    function handleCredentialResponse(response) {
-      console.log("Encoded JWT ID token: " + response.credential);
-    }
-    window.onload = function () {
-      google.accounts.id.initialize({
-        client_id: "334075336256-vp9uf43j5520gbii45ei7esppb7jjp2r.apps.googleusercontent.com",
-        callback: handleCredentialResponse
-      });
-      google.accounts.id.renderButton(
-        document.getElementById("buttonDiv"),
-        { theme: "outline", size: "large" }  // customization attributes
-      );
-      google.accounts.id.prompt(); // also display the One Tap dialog
-    }
-  </script>
   <div id="buttonDiv"></div>
   <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
   <script src="api/api-axios.js"></script>
@@ -187,8 +171,8 @@
   <script src="helper/dark-mode-switcher.js"></script>
   <script src="helper/change-language.js"></script>
   <script src="helper/switch-login-register.js"></script>
-  <script src="helper/handle-fom-register.js"></script>
-  <script src="script.js"></script>
+  <script src="helper/handle-form-register.js"></script>
+  <script src="helper/handle-form-login.js"></script>
 </body>
 
 </html>

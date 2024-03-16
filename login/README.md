@@ -1,5 +1,5 @@
 ## How to run project
-
+npm run dev to build project
 ## Technical 
 javascript 
 tailwindcss
