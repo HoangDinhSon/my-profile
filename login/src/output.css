@@ -808,7 +808,7 @@ video {
 
 .register-form {
   display: flex;
-  height: 100vh;
+  height: calc(100vh - 100px);
   align-items: center;
   justify-content: center;
   background-image: linear-gradient(to right, var(--tw-gradient-stops));
@@ -1055,6 +1055,10 @@ video {
   color: rgb(255 255 255 / var(--tw-text-opacity));
 }
 
+.outline {
+  outline-style: solid;
+}
+
 .hover\:bg-\[\#1da1f2\]\/90:hover {
   background-color: rgb(29 161 242 / 0.9);
 }
@@ -1070,11 +1074,6 @@ video {
 .hover\:bg-gray-100:hover {
   --tw-bg-opacity: 1;
   background-color: rgb(243 244 246 / var(--tw-bg-opacity));
-}
-
-.hover\:text-\[blue\]:hover {
-  --tw-text-opacity: 1;
-  color: rgb(0 0 255 / var(--tw-text-opacity));
 }
 
 .hover\:text-\[\#5656da\]:hover {
