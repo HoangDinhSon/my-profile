@@ -15,7 +15,8 @@
 html {
     font-size: 62.5%;
 }
-body{
+
+body {
     overflow-x: hidden;
 }
 
@@ -51,12 +52,38 @@ body{
     animation: rotate 30s infinite;
 }
 
-@keyframes rotate{
+@keyframes rotate {
     0% {
         transform: rotate(0);
     }
-    100%{
+
+    100% {
         transform: rotate(360deg);
     }
 }
+
+.navbar {
+    position: relative;
+    z-index: 20;
+    top: 4rem;
+    display: flex;
+    justify-content: space-evenly;
+}
+
+.navbar-link {
+    font-size: 2.2rem;
+    font-weight: 700;
+    letter-spacing: .2rem;
+    color: #fff;
+    width: 1.5rem;
+    word-wrap: break-word;
+    transition: width 0.5s;
+}
+
+.navbar-link:hover {
+    width: 15rem;
+    background-color: rgba(255, 255, 255, 0.2);
+    transition: width 0.5s;
+}
+
 /* End of Section 1  */
