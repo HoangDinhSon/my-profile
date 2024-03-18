@@ -5,27 +5,98 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Home</title>
+    <!-- font awsome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+    <!-- boostrap cdn -->
+    <!-- My Css -->
     <link rel="stylesheet" href="style.css">
-    
+
 </head>
 
 <body>
-    <section class="section-1">
-        <header id="header-common" class="w-full h-16 bg-gray-300">Home page</header>
-    </section>
-    <section class="section-2">
-        <div class="flex">
-            <nav id="navbar-common " class="bg-gray-300 w-16 h-screen">Nav</nav>
-            <div class="">
-                <ul>
+    <div class="">
+        <section class="section-1">
+            <div class="header-logo">
+                <a href="">
+                    <img src="../assets/img/logo-tutorial-course.jpg" alt="Logo-tutorial" srcset=""
+                        class="header-logo-img">
+                </a>
+                <h4>Tutorial code</h4>
+            </div>
+
+            <div class="header-search">
+                <i class="fa-solid fa-magnifying-glass"></i>
+                <input type="text" placeholder="Tìm kiếm project" class="header-search-input">
+            </div>
+
+            <div>
+                <button class="header-btn login" type="button">Đăng nhập</button>
+                <button class="header-btn signup" type="button">Đăng Ký</button>
+            </div>
+        </section>
+
+        <nav id="" class="my-navbar">
+            <div>
+                <a class="navbar-icon" href="">
+                    <i class="fa-solid fa-house"></i>
+                    <div>Trang chủ</div>
+                </a>
+            </div>
+            <div>
+                <a class="navbar-icon" href="">
+                    <i class="fa-solid fa-house"></i>
+                    <div>Trang chủ</div>
+                </a>
+            </div>
+            <div>
+                <a class="navbar-icon" href="">
+                    <i class="fa-solid fa-house"></i>
+                    <div>Trang chủ</div>
+                </a>
+            </div>
+        </nav>
+
+        <section class="section-2">
+
+           
+
+            <h2 >Các project</h2>
+
+            <div class="list-box" id="boxContent">
+
+                <div class="box-item" id="boxPage">
+                    <img src="/login/src/assets/img/logo-tutorial-course.jpg" alt="">
+                    <div>
+                        <h3>Page: Food </h3>
+                        <div>Detail: trang liệt kê </div>
+                        <a href="/login/src/food-page/index.html">
+                            <button>vào trang</button>
+                        </a>
+                    </div>
+                </div>
+
+                <div class="box-item">
+                    <img src="/login/src/assets/img/logo-tutorial-course.jpg" alt="">
+                    <div>
+                        <h3>Page: Food </h3>
+                        <div>Detail: trang liệt kê </div>
+                        <a href="/login/src/food-page/index.html">
+                            <button>vào trang</button>
+                        </a>
+                    </div>
+                </div>
+
+                <!-- <ul>
                     <li><a href="/login/src/food-page/index.html" class="">food</a></li>
                     <li><a href="/login/src/page-creative/">Creative</a></li>
                 </ul>
-            </div>
-        </div>
-    </section>
 
-    <script src="script.js"></script>
+                <iframe src="/login/src/food-page/index.html" frameborder="0"></iframe> -->
+            </div>
+        </section>
+    </div>
+   
+    <!-- <script src="script.js"></script> -->
 </body>
 
 </html>
