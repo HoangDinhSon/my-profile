@@ -15,7 +15,11 @@
 
 <body>
     <div class="">
+
+
         <section class="section-1">
+
+
             <div class="header-logo">
                 <a href="">
                     <img src="../assets/img/logo-tutorial-course.jpg" alt="Logo-tutorial" srcset=""
@@ -35,68 +39,50 @@
             </div>
         </section>
 
-        <nav id="" class="my-navbar">
-            <div>
-                <a class="navbar-icon" href="">
+        <nav id="" class="navbar">
+            <div class="item-square">
+                <div>
                     <i class="fa-solid fa-house"></i>
                     <div>Trang chủ</div>
-                </a>
+                </div>
             </div>
-            <div>
-                <a class="navbar-icon" href="">
+            <div class="item-square">
+                <div>
                     <i class="fa-solid fa-house"></i>
                     <div>Trang chủ</div>
-                </a>
+                </div>
             </div>
-            <div>
-                <a class="navbar-icon" href="">
-                    <i class="fa-solid fa-house"></i>
-                    <div>Trang chủ</div>
-                </a>
-            </div>
+
         </nav>
 
         <section class="section-2">
-
-           
-
-            <h2 >Các project</h2>
-
-            <div class="list-box" id="boxContent">
-
-                <div class="box-item" id="boxPage">
-                    <img src="/login/src/assets/img/logo-tutorial-course.jpg" alt="">
-                    <div>
-                        <h3>Page: Food </h3>
-                        <div>Detail: trang liệt kê </div>
-                        <a href="/login/src/food-page/index.html">
-                            <button>vào trang</button>
-                        </a>
-                    </div>
-                </div>
-
-                <div class="box-item">
-                    <img src="/login/src/assets/img/logo-tutorial-course.jpg" alt="">
-                    <div>
-                        <h3>Page: Food </h3>
-                        <div>Detail: trang liệt kê </div>
-                        <a href="/login/src/food-page/index.html">
-                            <button>vào trang</button>
-                        </a>
-                    </div>
-                </div>
-
-                <!-- <ul>
-                    <li><a href="/login/src/food-page/index.html" class="">food</a></li>
-                    <li><a href="/login/src/page-creative/">Creative</a></li>
-                </ul>
-
-                <iframe src="/login/src/food-page/index.html" frameborder="0"></iframe> -->
+            <div id="boxInitial" class="box-initial">
+                <section class="slider-wrapper">
+                    <button class="slide-arrow" id="slide-arrow-prev">
+                        &#8249;
+                    </button>
+                    <button class="slide-arrow" id="slide-arrow-next">
+                        &#8250;
+                    </button>
+                    <ul class="slides-container" id="slides-container">
+                        <li class="slide"></li>
+                        <li class="slide"></li>
+                        <li class="slide"></li>
+                        <li class="slide"></li>
+                    </ul>
+                </section>
+                <h2>Các project</h2>
+                <!-- render by javascript lookup boxContent-->
+                <div class="list-box" id="boxContent"></div>
+            </div>
+            <div class="popup visible-popup" id="cardPopup">
+                <img src="folder-image/tool-bar-chrome.png" alt="">
+                <iframe src="/login/src/food-page/index.html" frameborder="0" class="iframe-page" id="iframePage"></iframe>
             </div>
         </section>
     </div>
-   
-    <!-- <script src="script.js"></script> -->
+
+    <script src="script.js"></script>
 </body>
 
 </html>
