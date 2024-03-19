@@ -24,3 +24,4 @@ nếu có 8 kí tự mạnh
 ### css 
 - css follow UI
 - responsive for các loại màn hình
+section 3.4

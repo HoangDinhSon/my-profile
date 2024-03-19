@@ -7,7 +7,7 @@ const passwordNotice = document.getElementById("passwordNotice");
 window.onload = () => {
     if (localStorage.getItem("token")) {
         console.log("onload will run at here");
-        window.open("home-page/home.html", "_self");
+        window.open("page-home", "_self");
     }
 }
 function handleLogin(event) {

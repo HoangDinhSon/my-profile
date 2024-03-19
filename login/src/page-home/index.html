@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Home</title>
+    <!-- font awsome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+    <!-- boostrap cdn -->
+    <!-- My Css -->
+    <link rel="stylesheet" href="style.css">
+
+</head>
+
+<body>
+    <div class="">
+
+
+        <section class="section-1">
+
+
+            <div class="header-logo">
+                <a href="">
+                    <img src="../assets/img/logo-tutorial-course.jpg" alt="Logo-tutorial" srcset=""
+                        class="header-logo-img">
+                </a>
+                <h4>Tutorial code</h4>
+            </div>
+
+            <div class="header-search">
+                <i class="fa-solid fa-magnifying-glass"></i>
+                <input type="text" placeholder="Tìm kiếm project" class="header-search-input">
+            </div>
+
+            <div>
+                <button class="header-btn login" type="button">Đăng nhập</button>
+                <button class="header-btn signup" type="button">Đăng Ký</button>
+            </div>
+        </section>
+
+        <nav id="" class="navbar">
+            <div class="item-square">
+                <div>
+                    <i class="fa-solid fa-house"></i>
+                    <div>Trang chủ</div>
+                </div>
+            </div>
+            <div class="item-square">
+                <div>
+                    <i class="fa-solid fa-house"></i>
+                    <div>Trang chủ</div>
+                </div>
+            </div>
+
+        </nav>
+
+        <section class="section-2">
+            <div id="boxInitial" class="box-initial">
+                <section class="slider-wrapper">
+                    <button class="slide-arrow" id="slide-arrow-prev">
+                        &#8249;
+                    </button>
+                    <button class="slide-arrow" id="slide-arrow-next">
+                        &#8250;
+                    </button>
+                    <ul class="slides-container" id="slides-container">
+                        <li class="slide"></li>
+                        <li class="slide"></li>
+                        <li class="slide"></li>
+                        <li class="slide"></li>
+                    </ul>
+                </section>
+                <h2>Các project</h2>
+                <!-- render by javascript lookup boxContent-->
+                <div class="list-box" id="boxContent"></div>
+            </div>
+            <div class="popup visible-popup" id="cardPopup">
+                <img src="folder-image/tool-bar-chrome.png" alt="">
+                <iframe src="/login/src/food-page/index.html" frameborder="0" class="iframe-page" id="iframePage"></iframe>
+            </div>
+        </section>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+
+</html>
