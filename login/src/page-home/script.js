@@ -37,7 +37,7 @@ console.log(contentListPage);
 
 
 /**
- * Slider
+ * Start Slider
  * */
 const slidesContainer = document.getElementById("slides-container");
 const slide = document.querySelector(".slide");
@@ -53,11 +53,12 @@ prevButton.addEventListener("click", () => {
     const slideWidth = slide.clientWidth;
     slidesContainer.scrollLeft -= slideWidth;
 });
+
 /**
  * End of Slider
  * */
 
-/**
+/** Start ui section-2
  * boxInitial:
  * if box is visible then iframe is hidden, and revert one
  * 
@@ -70,6 +71,19 @@ const iframePageEle = document.getElementById("iframePage")
 boxPageEle.forEach((item, i) => {
     item.addEventListener('click', () => {
         cardPopup.classList.toggle("visible-popup");
-        iframePageEle.src = listPage[i].linkPage
+        iframePageEle.src = listPage[i].linkPage;
+        backgroundPopupEle.classList.toggle("background-popup-visible");
     })
+})
+/** End ui section 2 
+ * boxInitial:
+ * if box is visible then iframe is hidden, and revert one
+ * 
+ * */
+// when click background popup turnoff
+const backgroundPopupEle = document.getElementById("backgroundPopup");
+backgroundPopupEle.addEventListener("click", () => {
+    cardPopup.classList.toggle("visible-popup");
+    backgroundPopupEle.classList.toggle("background-popup-visible");
+   
 })
